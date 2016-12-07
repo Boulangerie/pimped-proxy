@@ -1,10 +1,10 @@
 # pimped-proxy
-[![Build Status](https://img.shields.io/travis/boulangerie/pimped-proxy.svg?style=flat-square)](https://travis-ci.org/boulangerie/pimped-proxy)
-[![Coveralls](https://img.shields.io/coveralls/boulangerie/pimped-proxy.svg?branch=master)](https://coveralls.io/github/boulangerie/pimped-proxy)
+[![Build Status](https://img.shields.io/travis/Boulangerie/pimped-proxy.svg?style=flat-square)](https://travis-ci.org/Boulangerie/pimped-proxy)
+[![Coveralls](https://img.shields.io/coveralls/Boulangerie/pimped-proxy.svg?branch=master)](https://coveralls.io/github/Boulangerie/pimped-proxy)
 [![npm version](https://img.shields.io/npm/v/pimped-proxy.svg?style=flat-square)](https://www.npmjs.org/package/pimped-proxy)
 [![npm downloads](https://img.shields.io/npm/dm/pimped-proxy.svg?style=flat-square)](http://npm-stat.com/charts.html?package=pimped-proxy&from=2016-12-01)
-[![npm dependencies](https://img.shields.io/david/boulangerie/pimped-proxy.svg)](https://david-dm.org/boulangerie/pimped-proxy)
-[![npm devDependencies](https://img.shields.io/david/dev/boulangerie/pimped-proxy.svg)](https://david-dm.org/boulangerie/pimped-proxy)
+[![npm dependencies](https://img.shields.io/david/Boulangerie/pimped-proxy.svg)](https://david-dm.org/Boulangerie/pimped-proxy)
+[![npm devDependencies](https://img.shields.io/david/dev/Boulangerie/pimped-proxy.svg)](https://david-dm.org/Boulangerie/pimped-proxy)
 [![npm license](https://img.shields.io/npm/l/pimped-proxy.svg)](https://www.npmjs.org/package/pimped-proxy)
 
 Pimped Proxy is a comprehensive and simple implementation of Proxy for JavaScript and TypeScript. It is not a replacement of
