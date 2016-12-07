@@ -1,0 +1,23 @@
+{
+  "compileOnSave": false,
+  "files": [
+    "./lib/proxy.ts",
+    "./lib/proxy.spec.ts"
+  ],
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "noImplicitAny": false,
+    "sourceMap": false,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "noUnusedParameters": true,
+    "noUnusedLocals": true,
+    "declaration": true,
+    "preserveConstEnums": true,
+    "noLib": false,
+    "outDir": "./dist",
+    "pretty": true,
+    "sourceMap": true
+  }
+}
