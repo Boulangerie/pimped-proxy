@@ -123,13 +123,13 @@ describe('Proxy', () => {
       }
       const carProxy: ICar = <ICar> new Proxy(car, {
         brand: {
-          get: () => {
-            return car.brand + ' 2015'
+          get: (value) => {
+            return value + ' 2015'
           }
         },
         model: {
-          get: () => {
-            return car.model + ' GTI'
+          get: (value) => {
+            return value + ' GTI'
           }
         },
         power: {

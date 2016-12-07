@@ -30,7 +30,8 @@ export class Proxy {
               if (_.isString(trap)) {
                 res = _.get(target, trap)
               } else if (trap.get) {
-                res = trap.get.call(src)
+                let val = _.get(target, property)
+                res = trap.get.call(src, val)
               } else {
                 res = _.get(target, property)
               }
