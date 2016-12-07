@@ -1,6 +1,6 @@
 {
   "name": "pimped-proxy",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Comprehensive and simple Proxy implementation",
   "main": "dist/proxy.js",
   "typings": "dist/proxy.d.ts",
