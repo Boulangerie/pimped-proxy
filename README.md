@@ -28,7 +28,8 @@ npm install pimped-proxy lodash --save
 ```js
 var car = { brand: 'Peugeot', model: '308',  power: '112hp' };
 var carProxy = new Proxy(car, ['brand', 'model', 'power']);
-console.log(`I bought a ${carProxy.brand} ${carProxy.model} of ${carProxy.power}`); // displays "I bought a Peugeot 308 of 112hp"
+console.log(`I bought a ${carProxy.brand} ${carProxy.model} of ${carProxy.power}`);
+// displays "I bought a Peugeot 308 of 112hp"
 ```
 
 ##### Updating a property on the source object will update it on the proxy
@@ -36,7 +37,8 @@ console.log(`I bought a ${carProxy.brand} ${carProxy.model} of ${carProxy.power}
 var car = { brand: 'Peugeot', model: '308',  power: '112hp' };
 var carProxy = new Proxy(car, ['brand', 'model', 'power']);
 car.power = '250hp'
-console.log(`I bought a ${carProxy.brand} ${carProxy.model} of ${carProxy.power}`); // displays "I bought a Peugeot 308 of 250hp"
+console.log(`I bought a ${carProxy.brand} ${carProxy.model} of ${carProxy.power}`);
+// displays "I bought a Peugeot 308 of 250hp"
 ```
 
 ##### Property proxying is two-way binding, then updating the proxy will update the source object
@@ -45,14 +47,16 @@ var car = { brand: 'Peugeot', model: '308',  power: '112hp' };
 var carProxy = new Proxy(car, ['brand', 'model', 'power']);
 carProxy.brand = 'Renault';
 carProxy.model = 'Clio';
-console.log(`I bought a ${car.brand} ${car.model} of ${car.power}`); // displays "I bought a Renault Clio of 112hp"
+console.log(`I bought a ${car.brand} ${car.model} of ${car.power}`);
+// displays "I bought a Renault Clio of 112hp"
 ```
 
 ##### If some properties are not specified, then they won't be overridden
 ```js
 var car = { brand: 'Peugeot', model: '308',  power: '112hp' };
 var carProxy = new Proxy(car, ['brand', 'model']);
-console.log(`I bought a ${carProxy.brand} ${carProxy.model} of ${carProxy.power||'??'}`); // displays "I bought a Peugeot 308 of ??"
+console.log(`I bought a ${carProxy.brand} ${carProxy.model} of ${carProxy.power||'??'}`);
+// displays "I bought a Peugeot 308 of ??"
 ```
 
 ### Proxy a list of paths
@@ -64,7 +68,8 @@ var carProxy = new Proxy(car, {
     'model': 'model',
     'power': 'engine.power'
 );
-console.log(`I bought a ${carProxy.brand} ${carProxy.model} of ${carProxy.power}`); // displays "I bought a Peugeot 308 of 112hp"
+console.log(`I bought a ${carProxy.brand} ${carProxy.model} of ${carProxy.power}`);
+// displays "I bought a Peugeot 308 of 112hp"
 ```
 *Path resolution uses the [_.get](https://lodash.com/docs/4.17.2#get) and  [_.set](https://lodash.com/docs/4.17.2#set) method from Lo-Dash.* 
 
@@ -90,7 +95,8 @@ var carProxy = new Proxy(car, {
     }
   }
 });
-console.log(`I bought a ${carProxy.brand} ${carProxy.model} of ${carProxy.power}`); // displays "I bought a Peugeot 308 GTI of 270hp"
+console.log(`I bought a ${carProxy.brand} ${carProxy.model} of ${carProxy.power}`);
+// displays "I bought a Peugeot 308 GTI of 270hp"
 ```
 
 ##### Creating setters give the possibility to dynamically alter the source object
@@ -116,7 +122,8 @@ var carProxy = new Proxy(car, {
 carProxy.brand = 'Renault';
 carProxy.model = 'Clio';
 carProxy.power = '140hp';
-console.log(`I bought a ${car.brand} ${car.model} of ${car.power}`); // displays "I bought a RENAULT Clio GTI of 270hp"
+console.log(`I bought a ${car.brand} ${car.model} of ${car.power}`);
+// displays "I bought a RENAULT Clio GTI of 270hp"
 ```
 
 ### Mix the ways to proxy
@@ -132,7 +139,8 @@ var carProxy = new Proxy(car, {
   },
   power: 'engine.power'
 });
-console.log(`I bought a ${carProxy.brand} ${carProxy.model} of ${carProxy.power}`); // displays "I bought a Peugeot 308 GTI of 270hp"
+console.log(`I bought a ${carProxy.brand} ${carProxy.model} of ${carProxy.power}`);
+// displays "I bought a Peugeot 308 GTI of 270hp"
 ```
 
 ### Transform an existing object into a Proxy
@@ -140,7 +148,8 @@ console.log(`I bought a ${carProxy.brand} ${carProxy.model} of ${carProxy.power}
 var existingCar = { name: 'MyCar', power: '250hp' };
 var car = { brand: 'Peugeot', model: '308',  power: '112hp' };
 Proxy.lookup(existingCar, car, ['brand', 'model']);
-console.log(`I bought a ${carProxy.brand} ${carProxy.model} of ${carProxy.power} and I called it ${carProxy.name}`); // displays "I bought a Peugeot 308 of 250hp and I called it MyCar"
+console.log(`I bought a ${carProxy.brand} ${carProxy.model} of ${carProxy.power} and I called it ${carProxy.name}`);
+// displays "I bought a Peugeot 308 of 250hp and I called it MyCar"
 ```
 
 ## License
