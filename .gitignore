@@ -1,6 +1,7 @@
-node_modules
-.idea
-dist
-tmp
-coverage
-reports
+node_modules/
+.idea/
+dist/
+tmp/
+coverage/
+reports/
+npm-debug.log

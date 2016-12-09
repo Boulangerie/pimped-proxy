@@ -15,7 +15,6 @@ node_js:
 script:
   - npm run build
   - npm run test
-  - npm run cover
 
 before_script:
   - mkdir -p dist reports

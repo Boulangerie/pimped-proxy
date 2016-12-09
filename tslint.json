@@ -37,7 +37,7 @@
     "no-construct": true,
     "no-control-regex": true,
     "no-debugger": true,
-    "no-default-export": true,
+    "no-default-export": false,
     "no-duplicate-case": true,
     "no-duplicate-variable": true,
     "no-empty": true,

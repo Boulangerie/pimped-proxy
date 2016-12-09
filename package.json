@@ -6,12 +6,13 @@
   "typings": "dist/proxy.d.ts",
   "scripts": {
     "tslint": "tslint lib/*.ts",
-    "test": "mocha --compilers ts:typescript-require lib/proxy.spec.ts",
-    "cover": "tsc && node ./node_modules/istanbul/lib/cli.js cover -x '**/logger.*' _mocha dist/*.spec.js && ./node_modules/.bin/remap-istanbul -i ./coverage/coverage.json -o ./reports/coverage/lcov.info -t lcovonly && rimraf coverage",
-    "build": "npm run tslint && rimraf dist && tsc",
-    "bump": "npm version patch && git push --tags origin master",
-    "bump:minor": "npm version minor && git push --tags origin master",
-    "bump:major": "npm version major && git push --tags origin master"
+    "browser": "browserify bin/main.js | uglifyjs > dist/proxy.browser.js",
+    "build": "npm run tslint && rimraf dist && tsc && npm run browser",
+    "test": "mocha --compilers ts:typescript-require lib/proxy.spec.ts && npm run cover",
+    "cover": "rimraf dist && tsc ./lib/proxy.spec.ts -outDir dist -sourceMap && node ./node_modules/istanbul/lib/cli.js cover -x '**/logger.*' _mocha dist/*.spec.js && ./node_modules/.bin/remap-istanbul -i ./coverage/coverage.json -o ./reports/coverage/lcov.info -t lcovonly && rimraf coverage",
+    "bump": "npm run build && npm version patch && git push --tags origin master && npm publish",
+    "bump:minor": "npm run build && npm version minor && git push --tags origin master && npm publish",
+    "bump:major": "npm run build && npm version major && git push --tags origin master && npm publish"
   },
   "repository": {
     "type": "git",
@@ -23,13 +24,10 @@
     "url": "https://github.com/Boulangerie/pimped-proxy/issues"
   },
   "homepage": "https://github.com/Boulangerie/pimped-proxy#readme",
-  "dependencies": {
-    "lodash": "^4.17.2"
-  },
   "devDependencies": {
     "@types/chai": "^3.4.34",
-    "@types/lodash": "^4.14.42",
     "@types/mocha": "^2.2.33",
+    "browserify": "^13.1.1",
     "chai": "^3.5.0",
     "istanbul": "^0.4.5",
     "mocha": "^3.2.0",
@@ -38,6 +36,7 @@
     "tslint": "^4.0.2",
     "tslint-eslint-rules": "^3.1.0",
     "typescript": "^2.0.10",
-    "typescript-require": "^0.2.9-1"
+    "typescript-require": "^0.2.9-1",
+    "uglify-js": "^2.7.5"
   }
 }
