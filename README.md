@@ -19,7 +19,7 @@ the [ES2015 Proxy object](https://developer.mozilla.org/en-US/docs/Web/JavaScrip
 ## Install
 The easiest way is to install `pimped-proxy` as `dependency`:
 ```sh
-npm install pimped-proxy lodash --save
+npm install pimped-proxy --save
 ```
 
 ## Usage
@@ -105,7 +105,7 @@ var carProxy = new Proxy(car, {
 console.log(`I bought a ${carProxy.brand} ${carProxy.model} of ${carProxy.power}`);
 // Displays "I bought a Peugeot 308 of 112hp"
 ```
-*Path resolution uses the [_.get](https://lodash.com/docs/4.17.2#get) and  [_.set](https://lodash.com/docs/4.17.2#set) method from Lo-Dash.* 
+*Path resolution uses Lo-Dash like [get](https://lodash.com/docs/4.17.2#get) and [set](https://lodash.com/docs/4.17.2#set) methods.* 
 
 ### Proxy a list of accessors
 
