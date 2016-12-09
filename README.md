@@ -217,6 +217,22 @@ console.log(`I bought a ${carProxy.brand} ${carProxy.model} of ${carProxy.power}
 // Displays "I bought a Peugeot 308 of 250hp and I called it MyCar"
 ```
 
+##### In TypeScript?
+```typescript
+import { Proxy } from 'pimped-proxy'
+
+const car: ICar = {
+  brand: 'Peugeot',
+  model: '308',
+  power: '112hp'
+}
+
+const carProxy: ICar = <ICar> new Proxy(car, ['brand', 'model', 'power'])
+
+console.log(`I bought a ${carProxy.brand} ${carProxy.model} of ${carProxy.power}`)
+// Displays "I bought a Peugeot 308 of 112hp"
+```
+
 ##### And in the browser?
 ```html
 <script src="pimped-proxy/dist/proxy.browser.js"></script>
